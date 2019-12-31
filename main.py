@@ -6,7 +6,7 @@ from tests import test_miller_rabin, stress_test_combined, stress_test_small_pri
 def main():
     compute_b(10000)
 
-    LIMIT = 500
+    LIMIT = 5000
     stress_test_naive(LIMIT)
     stress_test_congruence(LIMIT)
     stress_test_small_primes(LIMIT)
