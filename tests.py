@@ -1,6 +1,6 @@
 import time
 from generators import naive_method, naive_method_small_primes, naive_method_congruence,\
-    naive_method_naccache, naive_method_combined, naive_method_combined_naccache
+    naive_method_naccache, naive_method_combined
 from millerrabin import miller_rabin
 
 
@@ -54,11 +54,3 @@ def stress_test_combined(LIMIT, k=10):
     end = time.time()
     print('Time elapsed: {} s\n'.format(end - start))
 
-
-def stress_test_combined_naccache(LIMIT, k=10):
-    print('Testing naive method with combined sieves and using Naccache method:')
-    start = time.time()
-    for i in range(LIMIT):
-        naive_method_combined_naccache(k)
-    end = time.time()
-    print('Time elapsed: {} s\n'.format(end - start))

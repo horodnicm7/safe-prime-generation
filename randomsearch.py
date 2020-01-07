@@ -78,32 +78,3 @@ def random_search_combined_sieves(k, t):
 
         if division_with_primes_test(n) and miller_rabin(n, t):
             return n
-
-
-def random_search_combined_naccache(k, t):
-    first = 10 ** (k - 1)
-    last = 10 ** k
-
-    while True:
-        n = randrange(first + 1, last - 1, step=2)
-
-        if n % 3 != 2:
-            continue
-
-        good = True
-
-        w = int((n - 1) / 2)
-        p = 2 * n + 1
-
-        for i in range(5):
-            r = B[i]
-            nr = DIVS[i]
-            if n % r == nr or p % r == nr or w % r == nr:
-                good = False
-                break
-
-        if not good:
-            continue
-
-        if division_with_primes_test(n) and miller_rabin(n, t):
-            return n
